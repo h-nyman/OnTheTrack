@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway traffic</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="box">
+        <h1>Railway station information</h1>
+        <p>Choose the station you want to get updated information about resent and upcoming departures.</p>
+        <div id="searchbox">
+        <form id="stationsearch">
+            <label for="station">Select station:</label>
+            <input id="station" name="stationsearch">
+            <button type="submit" id="search">Search</button>
+        </form>
+        </div>
+
+        <p type="text" id="stationOutput"></p>
+        <div id="output"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

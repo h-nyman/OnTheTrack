@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #2f3e46;
+    background-color: #f1f3f0;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+    }
+}
+
+.box {
+    border: 7px solid #52796f;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 25px auto;
+    min-height: 300px;
+    max-width: 90%;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+h1 {
+    color: #2f3e46;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    padding: 20px;
+    text-align: center;
+}
+
+#searchbox {
+    padding: 20px;
+    text-align: center;
+
+}
+
+#stationsearch {
+    padding: 5px;
+    margin: 8px auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    @media screen and (min-width: 450px) {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+button {
+    text-align: center;
+    padding: 5px;
+    font-size: medium;
+}
+
+#output {
+    overflow-x: auto;
+}
+
+table {
+    border: 1px solid #2f3e46;
+    border-radius: 5px;
+    border-spacing: 7px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    min-width: max-content;
+
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+td,
+th {
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word;
+
+    @media screen and (max-width: 768px) {
+        padding: 5px;
+    }
+}
+
+#stationOutput {
+    margin: 0px;
+    text-align: center;
+}
