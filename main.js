@@ -16,7 +16,7 @@ stationForm.addEventListener("submit", (e) => { // event triggered when user sub
                     stationInformation(station.stationShortCode, stations); // call stationInformation() with the matched station's shortcode
                     document.getElementById("stationOutput").innerHTML = `<p>STATION: ${station.stationName.toUpperCase()}</p>`; // prints name of given station
                     return station;  // exit the loop after finding the station
-                } 
+                }
             }
             alert("No station found"); // error message if no station matches the input
         })
@@ -26,8 +26,8 @@ stationForm.addEventListener("submit", (e) => { // event triggered when user sub
 });
 
 function stationInformation(stationShortCode, stations) {
-    fetch("https://rata.digitraffic.fi/api/v1/live-trains/station/" + stationShortCode + "?arrived_trains=0&arriving_trains=0&departed_trains=2&departing_trains=5&include_nonstopping=false&train_categories=Commuter,Long-distance") 
-    // fetch station metadata from the API by using station shortcode, only commuter and long-distance trains that stop at the station
+    fetch("https://rata.digitraffic.fi/api/v1/live-trains/station/" + stationShortCode + "?arrived_trains=0&arriving_trains=0&departed_trains=2&departing_trains=5&include_nonstopping=false&train_categories=Commuter,Long-distance")
+        // fetch station metadata from the API by using station shortcode, only commuter and long-distance trains that stop at the station
         .then((response) => { // handle response
             if (!response.ok) { // check if response is ok
                 alert("Network response error"); // handle failed network request with an error
@@ -46,7 +46,7 @@ function stationInformation(stationShortCode, stations) {
                 outPut += '<tr>'; // begin a new table row
                 outPut += '<td>' + row.time + '</td>'; // add the scheduled tim to the row
                 outPut += '<td>' + row.destination + '</td>'; // add the end station to the row
-                outPut += '<td>' + row.track + '</td>'; // add what track the train leavse from to the row
+                outPut += '<td>' + row.track + '</td>'; // add what track the train leaves from to the row
                 outPut += '<td>' + row.trainNumber + '</td>'; // add train number to the row
                 outPut += '<td>' + row.trainType + '</td>'; // add type of train to the row
                 outPut += '</tr>'; // end the table row
@@ -67,11 +67,11 @@ function toHelsinkiTime(isoDate) {
         hour: '2-digit', // use two digits when displaying hour
         minute: '2-digit', // use two digits when displaying minute
         hour12: false // use the 24-hour clock format
-    }); 
+    });
 }
 
 function toRow(trainDeparture, departureStation, stations) {
-    const departureTimeTable = trainDeparture.timeTableRows.find(timeTableRow => timeTableRow.stationShortCode === departureStation) // find the timetable for the trainstation
+    const departureTimeTable = trainDeparture.timeTableRows.find(timeTableRow => timeTableRow.stationShortCode === departureStation) // find the timetable for the train station
     const endStation = trainDeparture.timeTableRows[trainDeparture.timeTableRows.length - 1] // find the last station in the train's timetable, which is the end station
 
     return { // return object containing the following information
